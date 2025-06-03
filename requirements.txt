@@ -1,0 +1,7 @@
+beautifulsoup4  
+selenium
+pandas
+fpdf
+lxml
+undetected-chromedriver
+cloudscraper
