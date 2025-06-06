@@ -1,7 +1,16 @@
-beautifulsoup4  
-selenium
+# DO NOT include azure-functions-worker in this file
+# The Python Worker is managed by Azure Functions platform
+# Manually managing azure-functions-worker may cause unexpected issues
+
+
+azure-functions
+azure-ai-documentintelligence
+azure-cosmos
+azure-storage-blob
+openai
+pytesseract
+Pillow
+python-docx
 pandas
-fpdf
-lxml
-undetected-chromedriver
-cloudscraper
+chardet
+requests
