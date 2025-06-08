@@ -37,15 +37,14 @@ def extract_csv(blob_data):
         encoding = result['encoding'] if result['encoding'] else 'utf-8'
         # Try reading with detected encoding and fallback options
         try:
-            df = pd.read_csv(BytesIO(blob_data), encoding=encoding, engine='python', error_bad_lines=False)
+            df = pd.read_csv(BytesIO(blob_data), encoding=encoding, engine='python', on_bad_lines='skip')
         except Exception as e:
             logger.warning(f"Primary CSV read failed: {str(e)}. Trying fallback with utf-8 and delimiter guess.")
             try:
-                df = pd.read_csv(BytesIO(blob_data), encoding='utf-8', sep=None, engine='python', error_bad_lines=False)
+                df = pd.read_csv(BytesIO(blob_data), encoding='utf-8', sep=None, engine='python', on_bad_lines='skip')
             except Exception as e2:
                 logger.error(f"CSV fallback read failed: {str(e2)}")
                 raise
-
         df = df.fillna('')  # Handle missing values
         text = clean_text(df.to_string())
         table = df.to_dict(orient="records")
@@ -54,7 +53,7 @@ def extract_csv(blob_data):
     except Exception as e:
         logger.error(f"CSV extraction failed: {str(e)}")
         raise
-
+    
 def extract_json(blob_data):
     """
     Extract and preprocess data from a JSON blob.

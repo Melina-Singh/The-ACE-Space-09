@@ -3,14 +3,43 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 
+
+# Core Azure Functions
 azure-functions
-azure-ai-documentintelligence
-azure-cosmos
+azure-functions-worker
+
+# Azure SDK packages
 azure-storage-blob
-openai
-pytesseract
-Pillow
-python-docx
-pandas
-chardet
-requests
+azure-cosmos
+azure-identity
+
+# OpenAI - Fixed version to avoid proxies error
+openai==1.55.3
+
+# HTTP client - Fixed version for compatibility
+httpx==0.27.2
+
+# Document Intelligence (if used)
+azure-ai-documentintelligence
+
+# HTTP and networking
+requests==2.31.0
+
+# Data processing
+pandas==2.3.0
+
+# OCR and image processing
+pytesseract==0.3.10
+Pillow==9.5.0
+
+# Document processing
+python-docx==0.8.11
+
+# Text encoding detection
+chardet==5.2.0
+
+# Environment variables
+python-dotenv
+
+# For your custom extractor (adjust as needed)
+# Add any other dependencies your merofunctions.extractors.main_extractor needs

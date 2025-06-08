@@ -1,7 +1,7 @@
 import logging
 from .pdf_extractor import extract_pdf
 from .docx_extractor import extract_docx
-from .image_ocr import extract_image_ocr  # Updated to match function name
+from .image_ocr import extract_image_ocr
 from .csv_json_handler import extract_csv, extract_json
 from .text_handler import extract_text
 
