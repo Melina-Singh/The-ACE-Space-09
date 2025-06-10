@@ -11,17 +11,35 @@ The system enables the aggregation and intelligent retrieval of critical data fr
 ---
 
 ## 🧱 Architecture Summary
+### 🔄 Data Collection 
+- **Sources**: Web scraping, APIs, and manual file
 
-### 🔄 Data Ingestion
-- **Sources**: Web scraping, APIs, and manual file uploads
-- **Azure Blob Storage**: Stores all files (structured, unstructured, semi-structured)
-- **Azure Functions**: Triggered when a new file is uploaded to process the file
+### Data Ingestion and Processing Pipeline
+Overview
 
-### ⚙️ Data Processing Pipeline
-- **Document Intelligence**: Uses Azure Document Intelligence to extract and chunk text
-- **Embedding Generation**: Embeddings are created using Azure OpenAI models
-- **NER & Metadata Extraction**: Azure AI Search performs Named Entity Recognition and metadata extraction
-- **Storage**: All outputs are stored in **Azure Cosmos DB** as a **Vector DB**
+This project outlines a data ingestion and processing pipeline leveraging Azure services to handle structured, unstructured, and semi-structured data in-line. The pipeline automates file processing, text extraction, embedding generation, and metadata storage to maintain a searchable knowledge base.
+Components
+🔄 Data Ingestion
+
+Azure Blob Storage: Stores all uploaded files (structured, unstructured, semi-structured) in-line.
+
+⚙️ Data Automation & Processing (via Azure Functions)
+
+Azure Functions:
+Acts as the central orchestrator in-line.
+Triggered when a new file is uploaded or every 3 hours to check for updates in-line.
+Executes the full pipeline below in-line:
+Document Intelligence: Calls Azure Document Intelligence to extract and chunk text in-line.
+Embedding Generation: Sends processed text to Azure OpenAI to generate embeddings in-line.
+NER & Metadata Extraction: Uses Azure AI Search for Named Entity Recognition and metadata extraction in-line.
+
+
+
+💾 Storage
+
+Final embeddings and metadata are stored in Azure Cosmos DB (Vector DB) in-line.
+Maintains a searchable knowledge base in-line.
+
 
 ### 🔍 Data Retrieval and Querying
 - **Indexing**: Azure AI Search indexes vectorized data
@@ -54,30 +72,10 @@ The system enables the aggregation and intelligent retrieval of critical data fr
 
 _🚧 Work in Progress_
 
-- Clone this repository
-- Configure Azure resources (Blob, Cosmos DB, Functions, OpenAI, Search)
-- Set environment variables and connection strings
-- Deploy Azure Functions and test the data ingestion pipeline
-
-Full instructions coming soon.
-
----
-
-## 📊 Demo
-
-_🚧 Coming Soon_  
-Live demo link and screenshots will be added here.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please open an issue or pull request for feature suggestions, bug fixes, or improvements.
+- To make the system more robust to take data from every data source with every structure.
 
 ---
 
 ## 📜 License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
+This project is licensed under the GNU General Public License.
