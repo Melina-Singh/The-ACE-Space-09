@@ -4,7 +4,7 @@ This project presents a scalable architecture for continuous monitoring, embeddi
 
 ---
 
-##  Overview
+##  Overview 
 
 The system enables the aggregation and intelligent retrieval of critical data from multiple sources such as web scraping, APIs, and manual uploads. It uses Azure Functions to monitor and process files, integrates NLP and vector embedding using OpenAI, and stores the enriched data in Cosmos DB. Users can then interact with the data using natural language through a web or mobile interface.
 
