@@ -46,6 +46,9 @@ Maintains a searchable knowledge base in-line.
 - **Prompt Flow**: User input is passed to GPT-4 via Azure OpenAI for intelligent answers
 - **Visualization**: Data can be visualized or queried in dashboards
 
+##  Architectural Diagram
+<img width="1920" height="1080" alt="azure storage explorer" src="https://github.com/user-attachments/assets/33d11e1c-e886-4166-a48f-22107b2375a9" />
+
 ---
 
 ##  Key Technologies
